@@ -562,3 +562,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 }); 
+
+// Check image loading status
+function checkImageStatus() {
+    const images = document.querySelectorAll('img');
+    let loadedCount = 0;
+    let failedCount = 0;
+    
+    images.forEach((img, index) => {
+        if (img.complete && img.naturalHeight !== 0) {
+            loadedCount++;
+            console.log(`✅ Image ${index + 1} loaded successfully:`, img.alt || img.src);
+        } else {
+            failedCount++;
+            console.warn(`❌ Image ${index + 1} failed to load:`, img.alt || img.src);
+        }
+    });
+    
+    console.log(`📊 Image Status: ${loadedCount} loaded, ${failedCount} failed out of ${images.length} total images`);
+    
+    if (failedCount === 0) {
+        console.log('🎉 All images loaded successfully!');
+    } else {
+        console.log('⚠️ Some images failed to load. Check the warnings above.');
+    }
+}
+
+// Check images after page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit for images to load, then check status
+    setTimeout(checkImageStatus, 2000);
+    
+    // Also check when window loads completely
+    window.addEventListener('load', checkImageStatus);
+}); 
