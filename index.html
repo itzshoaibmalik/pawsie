@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsie 🐾 - Your Perfect Companion Awaits</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Pawsie 🐾</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#adopt" class="nav-link">Adopt/Buy</a></li>
+                <li><a href="#services" class="nav-link">Book Services</a></li>
+                <li><a href="#trainers" class="nav-link">Trainers</a></li>
+                <li><a href="#grooming" class="nav-link">Grooming</a></li>
+                <li><a href="#vet" class="nav-link">Vet 24/7</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                <li><a href="#qa" class="nav-link">Q&A</a></li>
+                <li><a href="#community" class="nav-link">Community</a></li>
+                <li><a href="#guide" class="nav-link">Guide</a></li>
+                <li><a href="#ngos" class="nav-link">NGOs</a></li>
+                <li><a href="#books" class="nav-link">Books</a></li>
+                <li><a href="#hotel" class="nav-link">Dog Hotel</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Find Your Perfect Companion</h1>
+            <p>Discover love, loyalty, and endless joy with your new furry friend</p>
+            <button class="cta-button" onclick="scrollToSection('adopt')">Find Your Dog</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=600" alt="Happy dog">
+        </div>
+    </section>
+
+    <!-- Adopt/Buy Section -->
+    <section id="adopt" class="section">
+        <div class="container">
+            <h2>Adopt or Buy Your Perfect Dog</h2>
+            <div class="dogs-grid">
+                <div class="dog-card">
+                    <img src="https://images.unsplash.com/photo-1546527868-ccb7ee7dfa6a?w=300" alt="Golden Retriever">
+                    <div class="dog-info">
+                        <h3>Golden Retriever</h3>
+                        <p><strong>Age:</strong> 2 years</p>
+                        <p><strong>Breed:</strong> Purebred</p>
+                        <p><strong>Price:</strong> $800</p>
+                        <button class="adopt-button" onclick="showModal('adopt', 'Golden Retriever')">Adopt Now</button>
+                    </div>
+                </div>
+                <div class="dog-card">
+                    <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?w=300" alt="Labrador">
+                    <div class="dog-info">
+                        <h3>Labrador</h3>
+                        <p><strong>Age:</strong> 1 year</p>
+                        <p><strong>Breed:</strong> Purebred</p>
+                        <p><strong>Price:</strong> $600</p>
+                        <button class="adopt-button" onclick="showModal('adopt', 'Labrador')">Adopt Now</button>
+                    </div>
+                </div>
+                <div class="dog-card">
+                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=300" alt="German Shepherd">
+                    <div class="dog-info">
+                        <h3>German Shepherd</h3>
+                        <p><strong>Age:</strong> 3 years</p>
+                        <p><strong>Breed:</strong> Purebred</p>
+                        <p><strong>Price:</strong> $900</p>
+                        <button class="adopt-button" onclick="showModal('adopt', 'German Shepherd')">Adopt Now</button>
+                    </div>
+                </div>
+                <div class="dog-card">
+                    <img src="https://images.unsplash.com/photo-1547407139-3c921a66005c?w=300" alt="Poodle">
+                    <div class="dog-info">
+                        <h3>Poodle</h3>
+                        <p><strong>Age:</strong> 1.5 years</p>
+                        <p><strong>Breed:</strong> Purebred</p>
+                        <p><strong>Price:</strong> $700</p>
+                        <button class="adopt-button" onclick="showModal('adopt', 'Poodle')">Adopt Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Book Professional Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Dog Training</h3>
+                    <p>Professional training for obedience and behavior</p>
+                    <button class="service-button" onclick="showModal('service', 'Dog Training')">Book Trainer</button>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-cut"></i>
+                    <h3>Grooming</h3>
+                    <p>Professional grooming and styling services</p>
+                    <button class="service-button" onclick="showModal('service', 'Grooming')">Book Grooming</button>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>Vet Consultation</h3>
+                    <p>Health check-ups and medical consultations</p>
+                    <button class="service-button" onclick="showModal('service', 'Vet Consultation')">Book Vet</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cross-Breeding Section -->
+    <section id="crossbreeding" class="section">
+        <div class="container">
+            <h2>Cross-Breeding Information</h2>
+            <div class="crossbreeding-content">
+                <div class="info-text">
+                    <h3>Understanding Cross-Breeding</h3>
+                    <p>Cross-breeding combines the best traits of different breeds to create healthy, unique companions. Our experts can help you understand the process and find the perfect match.</p>
+                </div>
+                <form class="crossbreeding-form" id="crossbreedingForm">
+                    <h3>Submit Your Dogs for Cross-Breeding</h3>
+                    <div class="form-group">
+                        <label for="dog1-breed">First Dog Breed:</label>
+                        <input type="text" id="dog1-breed" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dog1-age">First Dog Age:</label>
+                        <input type="number" id="dog1-age" min="1" max="15" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dog2-breed">Second Dog Breed:</label>
+                        <input type="text" id="dog2-breed" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dog2-age">Second Dog Age:</label>
+                        <input type="number" id="dog2-age" min="1" max="15" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Contact Email:</label>
+                        <input type="email" id="contact-email" required>
+                    </div>
+                    <button type="submit" class="submit-button">Submit for Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vet 24/7 Section -->
+    <section id="vet" class="section">
+        <div class="container">
+            <h2>24/7 Emergency Veterinary Care</h2>
+            <div class="vet-emergency">
+                <div class="emergency-info">
+                    <i class="fas fa-phone-alt emergency-icon"></i>
+                    <h3>Emergency Hotline</h3>
+                    <p class="emergency-number">1-800-PAWS-VET</p>
+                    <p>Available 24/7 for urgent care</p>
+                    <button class="emergency-button" onclick="showModal('emergency', 'Vet Emergency')">Contact Vet Now</button>
+                </div>
+                <div class="emergency-services">
+                    <h3>Emergency Services</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Immediate consultation</li>
+                        <li><i class="fas fa-check"></i> Emergency surgery</li>
+                        <li><i class="fas fa-check"></i> Poison control</li>
+                        <li><i class="fas fa-check"></i> Trauma care</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Found my perfect companion through Pawsie. The adoption process was smooth and professional."</p>
+                    <h4>- Sarah Johnson</h4>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Amazing grooming service! My dog looks and feels fantastic after every visit."</p>
+                    <h4>- Mike Chen</h4>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The 24/7 vet service saved my dog's life. Incredibly grateful for the quick response."</p>
+                    <h4>- Emily Rodriguez</h4>
+                </div>
+            </div>
+            <div class="review-form">
+                <h3>Share Your Experience</h3>
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label for="reviewer-name">Your Name:</label>
+                        <input type="text" id="reviewer-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="review-rating">Rating:</label>
+                        <select id="review-rating" required>
+                            <option value="">Select rating</option>
+                            <option value="5">5 Stars</option>
+                            <option value="4">4 Stars</option>
+                            <option value="3">3 Stars</option>
+                            <option value="2">2 Stars</option>
+                            <option value="1">1 Star</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="review-text">Your Review:</label>
+                        <textarea id="review-text" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Q&A Section -->
+    <section id="qa" class="section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="qa-container">
+                <div class="qa-item">
+                    <div class="qa-question" onclick="toggleQA(this)">
+                        <h3>What is the adoption process like?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="qa-answer">
+                        <p>The adoption process involves an application, home visit, and meeting with the dog. We ensure the best match for both you and your new companion.</p>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question" onclick="toggleQA(this)">
+                        <h3>How much does dog training cost?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="qa-answer">
+                        <p>Training costs vary based on the program and duration. Basic obedience starts at $200, while advanced training can range from $500-$1000.</p>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question" onclick="toggleQA(this)">
+                        <h3>Do you offer pet insurance?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="qa-answer">
+                        <p>Yes, we partner with leading pet insurance providers to offer comprehensive coverage plans starting at $25/month.</p>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question" onclick="toggleQA(this)">
+                        <h3>What if my dog has health issues?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="qa-answer">
+                        <p>Our 24/7 vet service is available for emergencies, and we have a network of specialists for ongoing health management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Feed Section -->
+    <section id="community" class="section">
+        <div class="container">
+            <h2>Community Feed</h2>
+            <div class="community-grid">
+                <div class="community-post" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=300" alt="Happy dog in park">
+                    <div class="post-caption">
+                        <p>Sunny day at the park with Max! 🐕☀️</p>
+                        <span class="post-author">- @dog_lover_sarah</span>
+                    </div>
+                </div>
+                <div class="community-post" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1546527868-ccb7ee7dfa6a?w=300" alt="Golden retriever puppy">
+                    <div class="post-caption">
+                        <p>New addition to the family! Meet Luna 🐾</p>
+                        <span class="post-author">- @golden_life</span>
+                    </div>
+                </div>
+                <div class="community-post" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?w=300" alt="Labrador training">
+                    <div class="post-caption">
+                        <p>Training session with Buddy - he's learning so fast! 🎾</p>
+                        <span class="post-author">- @lab_trainer_mike</span>
+                    </div>
+                </div>
+                <div class="community-post" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=300" alt="German shepherd">
+                    <div class="post-caption">
+                        <p>Rex protecting the family ❤️</p>
+                        <span class="post-author">- @gshepherd_fan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guides & Insurance Section -->
+    <section id="guide" class="section">
+        <div class="container">
+            <h2>Guides & Insurance</h2>
+            <div class="guides-content">
+                <div class="breed-selector">
+                    <h3>Breed Information</h3>
+                    <select id="breedSelect" onchange="showBreedInfo()">
+                        <option value="">Select a breed</option>
+                        <option value="golden">Golden Retriever</option>
+                        <option value="labrador">Labrador</option>
+                        <option value="german-shepherd">German Shepherd</option>
+                        <option value="poodle">Poodle</option>
+                        <option value="bulldog">Bulldog</option>
+                    </select>
+                    <div id="breedInfo" class="breed-info"></div>
+                </div>
+                <div class="insurance-quiz">
+                    <h3>Insurance Quiz</h3>
+                    <div class="quiz-question">
+                        <p>What's your dog's age?</p>
+                        <select id="dogAge">
+                            <option value="">Select age</option>
+                            <option value="puppy">Puppy (0-1 year)</option>
+                            <option value="young">Young (1-3 years)</option>
+                            <option value="adult">Adult (3-7 years)</option>
+                            <option value="senior">Senior (7+ years)</option>
+                        </select>
+                    </div>
+                    <div class="quiz-question">
+                        <p>What's your budget for insurance?</p>
+                        <select id="insuranceBudget">
+                            <option value="">Select budget</option>
+                            <option value="basic">Basic ($20-40/month)</option>
+                            <option value="standard">Standard ($40-60/month)</option>
+                            <option value="premium">Premium ($60-100/month)</option>
+                        </select>
+                    </div>
+                    <button class="quiz-button" onclick="getInsuranceRecommendation()">Get Recommendation</button>
+                    <div id="insuranceResult" class="insurance-result"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NGO Support Section -->
+    <section id="ngos" class="section">
+        <div class="container">
+            <h2>Support Animal Welfare NGOs</h2>
+            <div class="ngos-grid">
+                <div class="ngo-card">
+                    <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=300" alt="Animal shelter">
+                    <h3>Paws for Hope</h3>
+                    <p>Rescuing and rehabilitating abandoned dogs</p>
+                    <div class="ngo-buttons">
+                        <button onclick="showModal('donate', 'Paws for Hope')">Donate</button>
+                        <button onclick="showModal('volunteer', 'Paws for Hope')">Volunteer</button>
+                    </div>
+                </div>
+                <div class="ngo-card">
+                    <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=300" alt="Dog rescue">
+                    <h3>Second Chance Dogs</h3>
+                    <p>Finding forever homes for senior dogs</p>
+                    <div class="ngo-buttons">
+                        <button onclick="showModal('donate', 'Second Chance Dogs')">Donate</button>
+                        <button onclick="showModal('volunteer', 'Second Chance Dogs')">Volunteer</button>
+                    </div>
+                </div>
+                <div class="ngo-card">
+                    <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?w=300" alt="Animal care">
+                    <h3>Happy Tails Rescue</h3>
+                    <p>Emergency medical care for injured animals</p>
+                    <div class="ngo-buttons">
+                        <button onclick="showModal('donate', 'Happy Tails Rescue')">Donate</button>
+                        <button onclick="showModal('volunteer', 'Happy Tails Rescue')">Volunteer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Recommendations Section -->
+    <section id="books" class="section">
+        <div class="container">
+            <h2>Recommended Books & Resources</h2>
+            <div class="books-grid">
+                <div class="book-card">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=200" alt="Dog training book">
+                    <h3>The Art of Dog Training</h3>
+                    <p>Comprehensive guide to positive reinforcement training</p>
+                    <button onclick="showModal('book', 'The Art of Dog Training')">Learn More</button>
+                </div>
+                <div class="book-card">
+                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=200" alt="Dog health book">
+                    <h3>Complete Dog Health Guide</h3>
+                    <p>Everything you need to know about canine health</p>
+                    <button onclick="showModal('book', 'Complete Dog Health Guide')">Learn More</button>
+                </div>
+                <div class="book-card">
+                    <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=200" alt="Dog nutrition book">
+                    <h3>Nutrition for Dogs</h3>
+                    <p>Feeding your dog for optimal health and longevity</p>
+                    <button onclick="showModal('book', 'Nutrition for Dogs')">Learn More</button>
+                </div>
+                <div class="book-card">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200" alt="Dog behavior book">
+                    <h3>Understanding Dog Behavior</h3>
+                    <p>Decode your dog's body language and emotions</p>
+                    <button onclick="showModal('book', 'Understanding Dog Behavior')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dog Hotel Section -->
+    <section id="hotel" class="section">
+        <div class="container">
+            <h2>Dog Hotels & Boarding</h2>
+            <div class="hotels-grid">
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300" alt="Luxury dog hotel">
+                    <h3>Pawsome Palace</h3>
+                    <p>Luxury boarding with 24/7 care and play areas</p>
+                    <div class="hotel-features">
+                        <span><i class="fas fa-bed"></i> Private suites</span>
+                        <span><i class="fas fa-walking"></i> Daily walks</span>
+                        <span><i class="fas fa-camera"></i> Live cams</span>
+                    </div>
+                    <p class="hotel-price">$50/night</p>
+                    <button class="book-hotel-button" onclick="showModal('hotel', 'Pawsome Palace')">Book Now</button>
+                </div>
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=300" alt="Cozy dog hotel">
+                    <h3>Cozy Canine Cottage</h3>
+                    <p>Home-like environment with personalized care</p>
+                    <div class="hotel-features">
+                        <span><i class="fas fa-home"></i> Home-like setting</span>
+                        <span><i class="fas fa-heart"></i> Individual attention</span>
+                        <span><i class="fas fa-utensils"></i> Custom meals</span>
+                    </div>
+                    <p class="hotel-price">$35/night</p>
+                    <button class="book-hotel-button" onclick="showModal('hotel', 'Cozy Canine Cottage')">Book Now</button>
+                </div>
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=300" alt="Adventure dog hotel">
+                    <h3>Adventure Dog Resort</h3>
+                    <p>Active dogs paradise with hiking and swimming</p>
+                    <div class="hotel-features">
+                        <span><i class="fas fa-mountain"></i> Hiking trails</span>
+                        <span><i class="fas fa-swimming-pool"></i> Swimming pool</span>
+                        <span><i class="fas fa-users"></i> Group play</span>
+                    </div>
+                    <p class="hotel-price">$45/night</p>
+                    <button class="book-hotel-button" onclick="showModal('hotel', 'Adventure Dog Resort')">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pawsie 🐾</h3>
+                    <p>Your trusted partner in finding and caring for your perfect companion.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> 1-800-PAWSIE</p>
+                    <p><i class="fas fa-envelope"></i> info@pawsie.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Dog Street, Pet City</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#adopt">Adopt a Dog</a></li>
+                        <li><a href="#services">Book Services</a></li>
+                        <li><a href="#vet">Emergency Vet</a></li>
+                        <li><a href="#hotel">Dog Hotels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with the latest news and tips!</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pawsie. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Community post">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
