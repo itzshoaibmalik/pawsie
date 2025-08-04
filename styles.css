@@ -223,6 +223,92 @@ body {
     margin-bottom: 3rem;
 }
 
+/* Why Pawsie Section */
+.why-pawsie-section {
+    background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+}
+
+.why-pawsie-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.why-pawsie-text .main-message {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #495057;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.short-formula h3 {
+    color: #4A6741;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.short-formula .formula {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4A6741;
+    margin-bottom: 1rem;
+    text-align: center;
+    background: linear-gradient(45deg, #4A6741, #6B8E63);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.short-formula .tagline {
+    font-size: 1.1rem;
+    color: #6C757D;
+    font-style: italic;
+    text-align: center;
+}
+
+.why-pawsie-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.feature-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #4A6741;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    color: #4A6741;
+    margin-bottom: 1rem;
+}
+
+.feature-item h4 {
+    color: #4A6741;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.feature-item p {
+    color: #6C757D;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
 /* Dogs Grid */
 .dogs-grid {
     display: grid;
@@ -267,8 +353,8 @@ body {
 /* Services Grid */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 .service-card {
@@ -923,6 +1009,19 @@ body {
         gap: 2rem;
     }
 
+    .why-pawsie-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .why-pawsie-text .main-message {
+        font-size: 1.1rem;
+    }
+
+    .short-formula .formula {
+        font-size: 1.5rem;
+    }
+
     .section h2 {
         font-size: 2rem;
     }
@@ -930,6 +1029,7 @@ body {
     .dogs-grid,
     .services-grid,
     .reviews-grid,
+    .why-pawsie-features {
     .community-grid,
     .ngos-grid,
     .books-grid,
