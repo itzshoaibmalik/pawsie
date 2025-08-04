@@ -182,7 +182,7 @@ function initProgressBars() {
 
 // Hover Effects for Cards
 function initHoverEffects() {
-    const cards = document.querySelectorAll('.vision-card, .value-card, .goal-content');
+    const cards = document.querySelectorAll('.vision-statement, .value-card, .goal-content, .feature, .highlight-item');
     
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
