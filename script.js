@@ -494,15 +494,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // Check if image is already loaded
         if (img.complete) {
             img.style.opacity = '1';
+            img.classList.add('loaded');
         } else {
             // Add load event listener
             img.addEventListener('load', function() {
                 this.style.opacity = '1';
+                this.classList.add('loaded');
             });
             
             // Add error event listener for fallback
             img.addEventListener('error', function() {
                 this.style.opacity = '1';
+                this.classList.add('loaded');
                 console.warn('Image failed to load:', this.src);
             });
         }
