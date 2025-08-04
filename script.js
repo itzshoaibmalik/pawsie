@@ -487,11 +487,25 @@ window.addEventListener('scroll', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('img');
     images.forEach(img => {
-        img.addEventListener('load', function() {
-            this.style.opacity = '1';
-        });
+        // Set initial opacity
         img.style.opacity = '0';
         img.style.transition = 'opacity 0.3s ease';
+        
+        // Check if image is already loaded
+        if (img.complete) {
+            img.style.opacity = '1';
+        } else {
+            // Add load event listener
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            
+            // Add error event listener for fallback
+            img.addEventListener('error', function() {
+                this.style.opacity = '1';
+                console.warn('Image failed to load:', this.src);
+            });
+        }
     });
 });
 

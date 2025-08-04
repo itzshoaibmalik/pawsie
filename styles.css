@@ -247,6 +247,7 @@ body {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 15px 15px 0 0;
 }
 
 .dog-info {
@@ -484,6 +485,7 @@ body {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .post-caption {
@@ -556,8 +558,9 @@ body {
 
 .ngo-card img {
     width: 100%;
-    height: 200px;
+    height: 150px;
     object-fit: cover;
+    border-radius: 10px 10px 0 0;
 }
 
 .ngo-card h3 {
@@ -608,7 +611,7 @@ body {
 
 .book-card img {
     width: 100%;
-    height: 200px;
+    height: 120px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 1rem;
@@ -650,8 +653,9 @@ body {
 
 .hotel-card img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
+    border-radius: 10px 10px 0 0;
 }
 
 .hotel-card h3 {
@@ -963,4 +967,71 @@ body {
         width: 95%;
         padding: 1.5rem;
     }
+} 
+
+/* Global image styles */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Hero image */
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Dog card images */
+.dog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Community post images */
+.community-post img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* NGO card images */
+.ngo-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Book card images */
+.book-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Hotel card images */
+.hotel-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Lightbox image */
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    margin: 5% auto;
+    display: block;
+    border-radius: 10px;
 } 
