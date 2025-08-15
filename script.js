@@ -1,16 +1,24 @@
-// Mobile Navigation Toggle
+// Mobile Navigation Toggle with ARIA state
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+if (hamburger && navMenu) {
+    hamburger.setAttribute('aria-controls', 'primary-navigation');
+    navMenu.setAttribute('id', 'primary-navigation');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.addEventListener('click', () => {
+        const isActive = hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', String(isActive));
+    });
+}
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
+    if (hamburger && navMenu) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+    }
 }));
 
 // Mobile dropdown functionality
@@ -24,12 +32,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Only toggle on mobile
             if (window.innerWidth <= 768) {
                 e.preventDefault();
+                const willOpen = !dropdown.classList.contains('active');
                 dropdown.classList.toggle('active');
+                link.setAttribute('aria-expanded', String(willOpen));
                 
                 // Close other dropdowns
                 dropdowns.forEach(otherDropdown => {
                     if (otherDropdown !== dropdown) {
                         otherDropdown.classList.remove('active');
+                        const otherLink = otherDropdown.querySelector('.nav-link');
+                        if (otherLink) otherLink.setAttribute('aria-expanded', 'false');
                     }
                 });
             }
@@ -234,6 +246,12 @@ function showModal(type, title) {
     
     modalBody.innerHTML = content;
     modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+    // focus trap: focus the first focusable element
+    setTimeout(() => {
+        const focusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusable) focusable.focus();
+    }, 0);
     
     // Add form submission handlers
     setTimeout(() => {
@@ -247,12 +265,21 @@ function showModal(type, title) {
 function closeModal() {
     const modal = document.getElementById('modal');
     modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
 }
 
 // Close modal when clicking outside
 window.addEventListener('click', (event) => {
     const modal = document.getElementById('modal');
     if (event.target === modal) {
+        closeModal();
+    }
+});
+
+// Close modal with ESC key
+window.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('modal');
+    if (e.key === 'Escape' && modal && modal.style.display === 'block') {
         closeModal();
     }
 });
@@ -490,6 +517,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Set initial opacity
         img.style.opacity = '0';
         img.style.transition = 'opacity 0.3s ease';
+        // Lazy-load non-critical images
+        if (!img.closest('.hero-image')) {
+            img.setAttribute('loading', 'lazy');
+            img.setAttribute('decoding', 'async');
+        }
         
         // Check if image is already loaded
         if (img.complete) {

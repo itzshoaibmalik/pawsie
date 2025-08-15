@@ -87,27 +87,39 @@ function initMobileMenu() {
     const dropdowns = document.querySelectorAll('.dropdown');
     
     if (hamburger) {
+        // ARIA attributes for accessibility
+        hamburger.setAttribute('aria-controls', 'vg-primary-navigation');
+        if (navMenu) navMenu.setAttribute('id', 'vg-primary-navigation');
+        hamburger.setAttribute('aria-expanded', 'false');
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
+            const isActive = hamburger.classList.toggle('active');
+            if (navMenu) navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', String(isActive));
         });
     }
     
     // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            if (hamburger && navMenu) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
         });
     });
     
     // Dropdown functionality for mobile
     dropdowns.forEach(dropdown => {
         const link = dropdown.querySelector('.nav-link');
+        if (!link) return;
+        link.setAttribute('aria-expanded', 'false');
         link.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
+                const willOpen = !dropdown.classList.contains('active');
                 dropdown.classList.toggle('active');
+                link.setAttribute('aria-expanded', String(willOpen));
             }
         });
     });
@@ -200,6 +212,9 @@ function initImageLoading() {
     const images = document.querySelectorAll('img');
     
     images.forEach(img => {
+        // Performance: hint browser to lazy-load and decode asynchronously
+        img.setAttribute('loading', 'lazy');
+        img.setAttribute('decoding', 'async');
         img.addEventListener('load', function() {
             this.classList.add('loaded');
         });

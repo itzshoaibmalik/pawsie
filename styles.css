@@ -885,6 +885,8 @@ body {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+    background: transparent;
+    border: 0;
 }
 
 .close:hover {
@@ -1029,7 +1031,7 @@ body {
     .dogs-grid,
     .services-grid,
     .reviews-grid,
-    .why-pawsie-features {
+    .why-pawsie-features,
     .community-grid,
     .ngos-grid,
     .books-grid,
@@ -1154,4 +1156,13 @@ img[src*="unsplash"] {
 img.loaded {
     animation: none;
     background: none;
-} 
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

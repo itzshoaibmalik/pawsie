@@ -84,6 +84,15 @@
     50% { transform: translateY(-20px) rotate(180deg); }
 }
 
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 .vision-hero .container {
     position: relative;
     z-index: 2;
